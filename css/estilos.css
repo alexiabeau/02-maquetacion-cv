@@ -22,7 +22,7 @@
   --radio-borde: 16px;
   --sombra-fuerte: 0 8px 25px rgba(0,0,0,0.12);
 
-  --url-fondo: none; /* por ejemplo: url('../img/fondo-emprendimiento.jpg') */
+  --url-fondo: url('../img/fondo-puntos.jpg'); /* tu fondo*/
   --url-logo: none;  /* por ejemplo: url('../img/logo.png') */
 
   --header-texto-visible: 1; /* 1 = mostrar texto, 0 = ocultar texto si hay imagen */
@@ -36,13 +36,8 @@ body {
   font-family: var(--fuente-principal);
   font-size: var(--tamano-base);
   color: var(--color-texto);
-  background-image: var(--url-fondo),
-                    radial-gradient(circle at 20px 20px, #ffd9e7 1px, transparent 1px),
-                    radial-gradient(circle at 10px 10px, #ffd9e7 1px, transparent 1px);
+  background-image: none;
   background-color: var(--color-fondo);
-  background-size: cover, 30px 30px, 30px 30px;
-  background-position: center, 0 0, 15px 15px;
-  background-attachment: fixed;
   line-height: 1.5;
   padding: 40px 10px;
 }
@@ -171,7 +166,20 @@ footer {
   background: #fff;
 }
 
-.trabajo img { width: 100%; height: 150px; object-fit: cover; display: block; }
+.trabajo img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.trabajo:hover img {
+  transform: scale(1.02);
+  filter: brightness(1.06);
+}
 
 .trabajo p {
   padding: 10px;
