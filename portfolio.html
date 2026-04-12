@@ -17,6 +17,7 @@
 <div class="volver">
     <a href="index-en.html">← Back to home</a>
 </div>
+<p class="click-hint">You can click on the images to see them in full size.</p>
 
 <section>
     <h2>Graphic Design and Web Design</h2>
@@ -53,22 +54,22 @@
 
         <div class="trabajo">
             <img src="img/librero.jpg" alt="3D bookshelf">
-            <p>3D bookshelf</p>
+            <p>Bookshelf with wood texture</p>
         </div>
 
         <div class="trabajo">
             <img src="img/mesa.jpg" alt="Stone table and chairs">
-            <p>Stone table and chairs</p>
+            <p>Stone table and chairs with stone texture</p>
         </div>
 
         <div class="trabajo">
             <img src="img/planta.jpg" alt="3D plant">
-            <p>3D plant</p>
+            <p>Plant with soil texture</p>
         </div>
 
         <div class="trabajo">
             <img src="img/Silla.jpg" alt="3D chair">
-            <p>3D chair</p>
+            <p>Bauhaus style chair</p>
         </div>
     </div>
 </section>
@@ -79,17 +80,81 @@
 
     <div class="galeria">
         <div class="trabajo">
-            <img src="img/ilustracion1.jpg">
+            <img src="img/pip.jpeg" alt="Digital Illustration">
             <p>Digital Illustration</p>
         </div>
 
         <div class="trabajo">
-            <img src="img/dibujo-digital.jpg" alt="Dibujo digital">
-            <p>Dibujo digital</p>
+            <img src="img/starfire.jpeg" alt="Digital animated character">
+            <p>Digital animated character</p>
+        </div>
+
+        <div class="trabajo">
+            <img src="img/angie.jpeg" alt="Digital drawing">
+            <p>Digital drawing</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Video Editing</h2>
+
+    <div class="galeria">
+        <div class="trabajo">
+            <video controls>
+                <source src="img/video1.mp4" type="video/mp4">
+                Your browser does not support videos.
+            </video>
+            <p>Video editing with smooth transitions</p>
+        </div>
+        <div class="trabajo">
+            <video controls>
+                <source src="img/video2.mp4" type="video/mp4">
+                Your browser does not support videos.
+            </video>
+            <p>Video editing with flashing effects</p>
+        </div>
+        <div class="trabajo">
+            <video controls>
+                <source src="img/video3.mp4" type="video/mp4">
+                Your browser does not support videos.
+            </video>
+            <p>Video editing with dynamic transitions</p>
         </div>
     </div>
 </section>
 
 </div>
+
+<!-- Modal para imágenes -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
+
+<script>
+var modal = document.getElementById('modal');
+var modalImg = document.getElementById('modal-img');
+var closeBtn = document.getElementsByClassName('close')[0];
+
+document.querySelectorAll('.trabajo img').forEach(img => {
+    img.onclick = function(event){
+        event.preventDefault();
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+});
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>

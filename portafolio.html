@@ -17,6 +17,7 @@
 <div class="volver">
     <a href="index.html">← Volver a inicio</a>
 </div>
+<p class="click-hint">Puedes hacer click en las imágenes para verlas completas.</p>
 
 <section>
     <h2>Diseño gráfico y web</h2>
@@ -52,22 +53,22 @@
     <div class="galeria">
         <div class="trabajo">
             <img src="img/librero.jpg" alt="Estantería 3D">
-            <p>Estantería 3D</p>
+            <p>Estantería con textura de madera</p>
         </div>
 
         <div class="trabajo">
             <img src="img/mesa.jpg" alt="Mesa de piedra">
-            <p>Mesa de piedra</p>
+            <p>Mesa y sillas con textura de piedra</p>
         </div>
 
         <div class="trabajo">
             <img src="img/planta.jpg" alt="Planta 3D">
-            <p>Planta 3D</p>
+            <p>Planta con textura de tierra</p>
         </div>
 
         <div class="trabajo">
             <img src="img/Silla.jpg" alt="Silla 3D">
-            <p>Silla 3D</p>
+            <p>Silla estilo bauhaus</p>
         </div>
     </div>
 </section>
@@ -78,28 +79,87 @@
 
     <div class="galeria">
         <div class="trabajo">
-            <a href="img/pip.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="img/pip.jpg" alt="Pip">
+            <a href="img/pip.jpeg" target="_blank" rel="noopener noreferrer">
+              <img src="img/pip.jpeg" alt="Pip">
             </a>
             <p>Comisión de personaje</p>
         </div>
 
         <div class="trabajo">
-            <a href="img/starfire.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="img/starfire.jpg" alt="Starfire">
+            <a href="img/starfire.jpeg" target="_blank" rel="noopener noreferrer">
+              <img src="img/starfire.jpeg" alt="Starfire">
             </a>
             <p>Dibujo digital de personaje animado</p>
         </div>
 
         <div class="trabajo">
-            <a href="img/dibujo-digital.jpg" target="_blank" rel="noopener noreferrer">
-              <img src="img/dibujo-digital.jpg" alt="Dibujo digital">
+            <a href="img/angie.jpeg" target="_blank" rel="noopener noreferrer">
+              <img src="img/angie.jpeg" alt="Dibujo digital">
             </a>
             <p>Dibujo digital</p>
         </div>
     </div>
 </section>
 
+<section>
+    <h2>Edición de video</h2>
+
+    <div class="galeria">
+        <div class="trabajo">
+            <video controls>
+                <source src="img/video1.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <p>Edición de video con transiciones suaves</p>
+        </div>
+        <div class="trabajo">
+            <video controls>
+                <source src="img/video2.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <p>Edición de video con efectos destellantes</p>
+        </div>
+        <div class="trabajo">
+            <video controls>
+                <source src="img/video3.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <p>Edición de video con transiciones dinámicas</p>
+        </div>
+    </div>
+</section>
+
 </div>
+
+<!-- Modal para imágenes -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
+
+<script>
+var modal = document.getElementById('modal');
+var modalImg = document.getElementById('modal-img');
+var closeBtn = document.getElementsByClassName('close')[0];
+
+document.querySelectorAll('.trabajo img').forEach(img => {
+    img.onclick = function(event){
+        event.preventDefault();
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+});
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>
