@@ -60,11 +60,11 @@ header .header-image {
 }
 
 header .header-image.banner-es {
-  background-image: url('../img/bannerESP.png');
+  background-image: url('/02-maquetacion-cv/img/bannerESP.png');
 }
 
 header .header-image.banner-en {
-  background-image: url('../img/bannerENG.png');
+  background-image: url('/02-maquetacion-cv/img/bannerENG.png');
 }
 
 header .header-banner {
