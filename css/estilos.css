@@ -22,8 +22,8 @@
   --radio-borde: 16px;
   --sombra-fuerte: 0 8px 25px rgba(0,0,0,0.12);
 
-  --url-fondo: url('/02-maquetacion-cv/img/fondo-puntos.jpg'); /* tu fondo*/
-  --url-logo: url('/02-maquetacion-cv/img/bannerENG.png');  /* banner para versión en inglés */
+  --url-fondo: url('../img/fondo-puntos.jpg'); /* tu fondo*/
+  --url-logo: url('../img/bannerENG.png');  /* banner para versión en inglés */
 
   --header-texto-visible: 1; /* 1 = mostrar texto, 0 = ocultar texto si hay imagen */
 }
@@ -53,14 +53,27 @@ header .header-image {
   background-position: center;
   background-color: #fff;
   border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 header .header-image.banner-es {
-  background-image: url('/02-maquetacion-cv/img/bannerESP.png');
+  background-image: url('../img/bannerESP.png');
 }
 
 header .header-image.banner-en {
-  background-image: url('/02-maquetacion-cv/img/bannerENG.png');
+  background-image: url('../img/bannerENG.png');
+}
+
+header .header-banner {
+  width: 92%;
+  max-width: 900px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 18px;
 }
 
 header h1,
