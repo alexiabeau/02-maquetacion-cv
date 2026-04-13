@@ -5,7 +5,7 @@
   --color-fondo: #fef2f6;
   --color-borde: #ffd4e8;
   --color-texto: #3f2f3b;
-  --color-titulos: #bd4175;
+  --color-titulos: #be4175 25% 26%);
   --color-subtitulo: #efadcb;
 
   --fuente-principal: 'Verdana', sans-serif;
@@ -23,7 +23,7 @@
   --sombra-fuerte: 0 8px 25px rgba(0,0,0,0.12);
 
   --url-fondo: url('../img/fondo-puntos.jpg'); /* tu fondo*/
-  --url-logo: none;  /* por ejemplo: url('../img/logo.png') */
+  --url-logo: url('../img/bannerENG.png');  /* banner para versión en inglés */
 
   --header-texto-visible: 1; /* 1 = mostrar texto, 0 = ocultar texto si hay imagen */
 }
@@ -43,13 +43,24 @@ body {
 }
 
 header .header-image {
-  width: 220px;
-  height: 100px;
+  width: 100%;
+  max-width: 100%;
+  height: 360px;
   margin: 0 auto 10px;
   background-image: var(--url-logo);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  background-color: #fff;
+  border-radius: 18px;
+}
+
+header .header-image.banner-es {
+  background-image: url('../img/bannerESP.png');
+}
+
+header .header-image.banner-en {
+  background-image: url('../img/bannerENG.png');
 }
 
 header h1,
@@ -90,8 +101,12 @@ header h2 {
 
 header {
   text-align: center;
-  padding: 26px 16px;
-  margin-bottom: 16px;
+  padding: 18px 16px 14px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 section {
@@ -194,6 +209,11 @@ aside ul li:before {
   content: '\2764';
   color: #f49bd2;
   margin-right: 6px;
+}
+
+#sobre-mi p,
+#about p {
+  text-align: justify;
 }
 
 footer {
